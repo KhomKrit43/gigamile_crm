@@ -1,3 +1,10 @@
+@php
+    // if (!session()->has('user_id')) {
+    //     header('Location: /login');
+    //     exit;
+    // }    
+@endphp
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg">
 
