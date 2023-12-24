@@ -12,20 +12,36 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('fist_name')->nullable();
-            $table->string('last_name')->nullable();
+            $table->string('username')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('role')->nullable();
+            $table->integer('role_id')->nullable();
             $table->string('phone')->nullable();
             $table->string('image')->nullable();
 
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();
         });
+
+        // Insert admin for testing
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'email' => 'admin@testing.com',
+            'password' => Hash::make('123456789'),
+            'role_id' => 1,
+            'phone' => '0999999999',
+            'image' => null,
+            'status' => 'active',
+            'created_by' => 'admin',
+            'updated_by' => 'admin',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     /**
