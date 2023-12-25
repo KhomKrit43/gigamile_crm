@@ -68,9 +68,7 @@
                                     <p class="text-muted">Sign in to continue to Velzon.</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="
-                                        {{ route('login') }}"
-                                        method="POST">
+                                    <form action="{{ route('login') }}" method="POST">
                                         @csrf
 
                                         <div class="mb-3">
@@ -111,9 +109,6 @@
                             <!-- end card body -->
                         </div>
                         <!-- end card -->
-
-
-
                     </div>
                 </div>
                 <!-- end row -->

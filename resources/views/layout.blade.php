@@ -1,6 +1,4 @@
 @php
-    // check if user is logged in or not else redirect to login page
-    // dd(Auth::check());
     if (!Auth::check()) {
         return redirect()->route('login');
     }
@@ -20,24 +18,24 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico">') }}" />
 
     <!-- jsvectormap css -->
-    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css" />
 
     <!--Swiper slider css-->
-    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/libs/swiper/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="assets/js/layout.js"></script>
+    <script src="{{ asset('assets/js/layout.js') }}"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -54,19 +52,21 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                    {{-- {{ asset('') }} --}}
+                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="17">
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo-light.png" alt="" height="17">
+                                    <img src="{{ asset('assets/images/logo-light.png') }}" alt=""
+                                        height="17">
                                 </span>
                             </a>
                         </div>
@@ -135,7 +135,7 @@
                                         <!-- item -->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                             <div class="d-flex">
-                                                <img src="assets/images/users/avatar-2.jpg"
+                                                <img src="{{ asset('assets/images/users/avatar-2.jpg') }}"
                                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="m-0">Angela Bernier</h6>
@@ -146,7 +146,7 @@
                                         <!-- item -->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                             <div class="d-flex">
-                                                <img src="assets/images/users/avatar-3.jpg"
+                                                <img src="{{ asset('assets/images/users/avatar-3.jpg') }}"
                                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="m-0">David Grasso</h6>
@@ -157,7 +157,7 @@
                                         <!-- item -->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                             <div class="d-flex">
-                                                <img src="assets/images/users/avatar-5.jpg"
+                                                <img src="{{ asset('assets/images/users/avatar-5.jpg') }}"
                                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="m-0">Mike Bunch</h6>
@@ -202,63 +202,64 @@
                         <div class="dropdown ms-1 topbar-head-dropdown header-item">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language"
-                                    height="20" class="rounded">
+                                <img id="header-lang-img" src="{{ asset('assets/images/flags/us.svg') }}"
+                                    alt="Header Language" height="20" class="rounded">
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language py-2"
                                     data-lang="en" title="English">
-                                    <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                    <img src="{{ asset('assets/images/flags/us.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18">
                                     <span class="align-middle">English</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="sp" title="Spanish">
-                                    <img src="assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                    <img src="{{ asset('assets/images/flags/spain.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18">
                                     <span class="align-middle">Española</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="gr" title="German">
-                                    <img src="assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded"
-                                        height="18"> <span class="align-middle">Deutsche</span>
+                                    <img src="{{ asset('assets/images/flags/germany.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18"> <span
+                                        class="align-middle">Deutsche</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="it" title="Italian">
-                                    <img src="assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                    <img src="{{ asset('assets/images/flags/italy.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18">
                                     <span class="align-middle">Italiana</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="ru" title="Russian">
-                                    <img src="assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                    <img src="{{ asset('assets/images/flags/russia.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18">
                                     <span class="align-middle">русский</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="ch" title="Chinese">
-                                    <img src="assets/images/flags/china.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                    <img src="{{ asset('assets/images/flags/china.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18">
                                     <span class="align-middle">中国人</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language"
                                     data-lang="fr" title="French">
-                                    <img src="assets/images/flags/french.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                    <img src="{{ asset('assets/images/flags/french.svg') }}" alt="user-image"
+                                        class="me-2 rounded" height="18">
                                     <span class="align-middle">français</span>
                                 </a>
                             </div>
@@ -286,19 +287,22 @@
                                     <div class="row g-0">
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="assets/images/brands/github.png" alt="Github">
+                                                <img src="{{ asset('assets/images/brands/github.png') }}"
+                                                    alt="Github">
                                                 <span>GitHub</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
+                                                <img src="{{ asset('assets/images/brands/bitbucket.png') }}"
+                                                    alt="bitbucket">
                                                 <span>Bitbucket</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
+                                                <img src="{{ asset('assets/images/brands/dribbble.png') }}"
+                                                    alt="dribbble">
                                                 <span>Dribbble</span>
                                             </a>
                                         </div>
@@ -307,19 +311,22 @@
                                     <div class="row g-0">
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
+                                                <img src="{{ asset('assets/images/brands/dropbox.png') }}"
+                                                    alt="dropbox">
                                                 <span>Dropbox</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
+                                                <img src="{{ asset('assets/images/brands/mail_chimp.png') }}"
+                                                    alt="mail_chimp">
                                                 <span>Mail Chimp</span>
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
+                                                <img src="{{ asset('assets/images/brands/slack.png') }}"
+                                                    alt="slack">
                                                 <span>Slack</span>
                                             </a>
                                         </div>
@@ -363,7 +370,7 @@
                                         </div>
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-1.png"
+                                                <img src="{{ asset('assets/images/products/img-1') }}.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -389,7 +396,7 @@
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-2.png"
+                                                <img src="{{ asset('assets/images/products/img-2') }}.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -414,7 +421,7 @@
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-3.png"
+                                                <img src="{{ asset('assets/images/products/img-3') }}.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -440,7 +447,7 @@
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-6.png"
+                                                <img src="{{ asset('assets/images/products/img-6') }}.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -466,7 +473,7 @@
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-5.png"
+                                                <img src="{{ asset('assets/images/products/img-5') }}.png"
                                                     class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
@@ -611,7 +618,7 @@
                                             <div
                                                 class="text-reset notification-item d-block dropdown-item position-relative active">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-2.jpg"
+                                                    <img src="{{ asset('assets/images/users/avatar-2.jpg') }}"
                                                         class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
@@ -673,7 +680,7 @@
                                             <div
                                                 class="text-reset notification-item d-block dropdown-item position-relative">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-8.jpg"
+                                                    <img src="{{ asset('assets/images/users/avatar-8.jpg') }}"
                                                         class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
@@ -714,7 +721,7 @@
                                         <div data-simplebar style="max-height: 300px;" class="pe-2">
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-3.jpg"
+                                                    <img src="{{ asset('assets/images/users/avatar-3.jpg') }}"
                                                         class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
@@ -742,7 +749,7 @@
 
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-2.jpg"
+                                                    <img src="{{ asset('assets/images/users/avatar-2.jpg') }}"
                                                         class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
@@ -771,7 +778,7 @@
 
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-6.jpg"
+                                                    <img src="{{ asset('assets/images/users/avatar-6.jpg') }}"
                                                         class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
@@ -800,7 +807,7 @@
 
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-8.jpg"
+                                                    <img src="{{ asset('assets/images/users/avatar-8.jpg') }}"
                                                         class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
@@ -837,7 +844,8 @@
                                     <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
                                         aria-labelledby="alerts-tab">
                                         <div class="w-25 w-sm-50 pt-3 mx-auto">
-                                            <img src="assets/images/svg/bell.svg" class="img-fluid" alt="user-pic">
+                                            <img src="{{ asset('assets/images/svg/bell.svg') }}" class="img-fluid"
+                                                alt="user-pic">
                                         </div>
                                         <div class="text-center pb-5 mt-2">
                                             <h6 class="fs-18 fw-semibold lh-base">Hey! You have no any notifications
@@ -853,7 +861,7 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user"
-                                        src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                        src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
                                         <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna
                                             Adame</span>
@@ -917,19 +925,19 @@
                 <!-- Dark Logo-->
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="17">
                     </span>
                 </a>
                 <!-- Light Logo-->
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="17">
+                        <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="17">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -1251,181 +1259,10 @@
                                 <div class="collapse menu-dropdown" id="sidebarAuth">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false" aria-controls="sidebarSignIn"
-                                                data-key="t-signin"> Sign In
+                                            <a href="{{ route('customers.index') }}" class="nav-link"
+                                                data-key="t-starter">
+                                                Customers
                                             </a>
-                                            <div class="collapse menu-dropdown" id="sidebarSignIn">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-signin-basic.html" class="nav-link"
-                                                            data-key="t-basic"> Basic
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-signin-cover.html" class="nav-link"
-                                                            data-key="t-cover"> Cover
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false" aria-controls="sidebarSignUp"
-                                                data-key="t-signup"> Sign Up
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarSignUp">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-signup-basic.html" class="nav-link"
-                                                            data-key="t-basic"> Basic
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-signup-cover.html" class="nav-link"
-                                                            data-key="t-cover"> Cover
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false"
-                                                aria-controls="sidebarResetPass" data-key="t-password-reset">
-                                                Password Reset
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarResetPass">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-pass-reset-basic.html" class="nav-link"
-                                                            data-key="t-basic">
-                                                            Basic </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-pass-reset-cover.html" class="nav-link"
-                                                            data-key="t-cover">
-                                                            Cover </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="#sidebarLockScreen" class="nav-link"
-                                                data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                                aria-controls="sidebarLockScreen" data-key="t-lock-screen">
-                                                Lock Screen
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarLockScreen">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-lockscreen-basic.html" class="nav-link"
-                                                            data-key="t-basic">
-                                                            Basic </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-lockscreen-cover.html" class="nav-link"
-                                                            data-key="t-cover">
-                                                            Cover </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false" aria-controls="sidebarLogout"
-                                                data-key="t-logout"> Logout
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarLogout">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-logout-basic.html" class="nav-link"
-                                                            data-key="t-basic"> Basic
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-logout-cover.html" class="nav-link"
-                                                            data-key="t-cover"> Cover
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarSuccessMsg" class="nav-link"
-                                                data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                                aria-controls="sidebarSuccessMsg" data-key="t-success-message">
-                                                Success Message
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarSuccessMsg">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-success-msg-basic.html" class="nav-link"
-                                                            data-key="t-basic">
-                                                            Basic </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-success-msg-cover.html" class="nav-link"
-                                                            data-key="t-cover">
-                                                            Cover </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarTwoStep" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false"
-                                                aria-controls="sidebarTwoStep" data-key="t-two-step-verification">
-                                                Two Step Verification
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarTwoStep">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-twostep-basic.html" class="nav-link"
-                                                            data-key="t-basic"> Basic
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-twostep-cover.html" class="nav-link"
-                                                            data-key="t-cover"> Cover
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false" aria-controls="sidebarErrors"
-                                                data-key="t-errors"> Errors
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarErrors">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="auth-404-basic.html" class="nav-link"
-                                                            data-key="t-404-basic"> 404
-                                                            Basic </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-404-cover.html" class="nav-link"
-                                                            data-key="t-404-cover"> 404
-                                                            Cover </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-404-alt.html" class="nav-link"
-                                                            data-key="t-404-alt"> 404 Alt
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="auth-500.html" class="nav-link" data-key="t-500">
-                                                            500
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -1991,7 +1828,6 @@
                                 </div>
                             </li>
                         @endif
-
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -2040,28 +1876,28 @@
 
 
     <!-- JAVASCRIPT -->
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="assets/js/plugins.js"></script>
+    <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
 
     <!-- apexcharts -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
     <!-- Vector map-->
-    <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-    <script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
+    <script src="{{ asset('assets/libs/jsvectormap/js/jsvectormap.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/jsvectormap/maps/world-merc.js') }}"></script>
 
     <!--Swiper slider js-->
-    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/libs/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Dashboard init -->
-    <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
+    <script src="{{ asset('assets/js/pages/dashboard-ecommerce.init.js') }}"></script>
 
     <!-- App js -->
-    <script src="assets/js/app.js"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
     {{--  --}}
 
