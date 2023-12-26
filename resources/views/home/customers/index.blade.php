@@ -31,17 +31,24 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
-                        {{-- Btn Add --}}
-                        <div class="d-flex m-3">
+                        <div class="d-flex justify-content-between m-3">
+                            {{-- Seach bar --}}
+                            <div class="input-group w-50">
+                                <input type="text" class="form-control" placeholder="Search ..."
+                                    aria-label="Recipient's username">
+                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                            </div>
+
                             <a href="{{ route('customers.create') }}" class="btn btn-primary">
                                 Add Customer
                             </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-centered table-nowrap table-hover mb-0">
+                                <table id="customersTable" class="table table-centered table-nowrap table-hover mb-0">
                                     <thead>
                                         <tr>
+                                            <th scope="col">#</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Phone</th>
@@ -55,8 +62,9 @@
                                                 <td colspan="5" class="text-center">No customers found.</td>
                                             </tr>
                                         @else
-                                            @foreach ($customers as $customer)
+                                            @foreach ($customers as $index => $customer)
                                                 <tr id="customer_{{ $customer->id }}">
+                                                    <th scope="row">{{ $customers->pages->start + $index + 1 }}</th>
                                                     <td>{{ $customer->name }}</td>
                                                     <td>{{ $customer->email }}</td>
                                                     <td>{{ $customer->phone }}</td>
@@ -79,7 +87,9 @@
                                         @endif
                                     </tbody>
                                 </table>
-                                {{ $customers->links() }}
+                                <div class="mt-3">
+                                    {{ $customers->links('pagination::bootstrap-5') }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,6 +101,15 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+        let customersTable = $('#customersTable').DataTable({
+            "paging": false,
+            "info": false,
+            "searching": false,
+            "ordering": false,
+            "autoWidth": false,
+            "responsive": true,
+        });
+
         function deleteItem(id) {
             console.log(id);
             Swal.fire({

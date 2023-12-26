@@ -38,6 +38,8 @@
     <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
 
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -1894,12 +1896,13 @@
     <script src="{{ asset('assets/libs/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Dashboard init -->
-    <script src="{{ asset('assets/js/pages/dashboard-ecommerce.init.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/pages/dashboard-ecommerce.init.js') }}"></script> --}}
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
-    {{--  --}}
+    {{-- Pung in --}}
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
     @yield('scripts')
 </body>

@@ -10,7 +10,9 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $customers = Customer::paginate(10);
+        $customers = Customer::paginate(5);
+        $customers->pages = new \stdClass();
+        $customers->pages->start = $customers->perPage() * $customers->currentPage() - $customers->perPage();
 
         return view('home.customers.index', compact('customers'));
     }
