@@ -28,7 +28,7 @@ class CustomerController extends Controller
             'name' => 'required|string|max:255|min:3',
             'email' => 'required|email|unique:customers,email',
             'phone' => 'required|numeric',
-            'address' => 'required|string',
+            'provine' => 'required|string',
         ]);
 
         Customer::create($request->all());
@@ -49,7 +49,7 @@ class CustomerController extends Controller
             'name' => 'required|string|max:255|min:3',
             'email' => 'required|email|unique:customers,email,' . $customer->id,
             'phone' => 'required|numeric',
-            'address' => 'required|string',
+            'provine' => 'required|string',
         ]);
 
         $customer->update($request->all());

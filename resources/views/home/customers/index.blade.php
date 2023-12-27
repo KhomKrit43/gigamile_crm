@@ -70,7 +70,7 @@
                                                     <td>{{ $customer->phone }}</td>
                                                     <td>
                                                         {{--  show only first 20 characters if address has more than 20 characters, add "..." --}}
-                                                        {{ Str::limit($customer->address, 20, '...') }}
+                                                        {{ $customer->provine }}
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('customers.edit', $customer->id) }}"
